@@ -26,7 +26,7 @@ SECRET_KEY = 'xma86nf(o&4cx2fbr*+(za6a9irat7ez==69%qc2mt-z-9t8m8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.lochedeoro.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
