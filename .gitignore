@@ -1,0 +1,13 @@
+.idea/
+venv/
+.env
+__pycache__
+
+/static/
+socket_server/node_modules
+/metronic/default/tools/node_modules/
+debug.log
+/reports/vendor/
+!/reports/json
+/reports/json*
+!/reports/json.gitkeep
