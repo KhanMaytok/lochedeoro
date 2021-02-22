@@ -22,7 +22,7 @@
 
     <!-- Critical styles
     ================================================== -->
-    <link rel="stylesheet" href="https://demo.artureanec.com/html/agro/css/critical.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/critical.min.css' %}" type="text/css">
 
     <!-- Load google font
     ================================================== -->
@@ -49,7 +49,8 @@
         _html.className = _html.className.replace("no-js", "js");
         _html.classList.add(isTouch ? "touch" : "no-touch");
     </script>
-    <script type="text/javascript" src="https://demo.artureanec.com/html/agro/js/device.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/device.min.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body class="woocommerce-page shop-home-page">
@@ -63,7 +64,7 @@
             <div class="row justify-content-between no-gutters">
 
                 <a class="top-bar__logo site-logo" href="index_4.html">
-                    <img class="img-fluid" src="img/site_logo.png" alt="demo"/>
+                    <img class="img-fluid" src="{% static 'img/logo.jpg' %}" alt="demo"/>
                 </a>
 
                 <a id="top-bar__navigation-toggler"
@@ -108,38 +109,12 @@
                                     <li>
                                         <a href="blog.html">Blog</a>
                                     </li>
-
-                                    <li>
-                                        <a href="contacts.html">Contacto</a>
-                                    </li>
-
-                                    <li class="li-profile">
-                                        <a href="#"><i class="fontello-profile"></i></a>
-                                    </li>
-
-                                    <li class="li-cart">
-                                        <a href="#"><i class="fontello-shopping-bag"></i><span
-                                                class="total">0</span></a>
-                                    </li>
-
                                     <li class="li-btn">
-                                        <a class="custom-btn custom-btn--small custom-btn--style-2" href="#">Get in
-                                            Touch</a>
+                                        <a class="custom-btn custom-btn--small custom-btn--style-2" id="get_in_touch"
+                                           href="#">Contáctanos</a>
                                     </li>
                                 </ul>
                             </nav>
-
-                            <div class="top-bar__contacts">
-                                <span>523 Sylvan Ave, 5th Floor Mountain View, CA 940 USA</span>
-                                <span><a href="#">+1 (234) 56789</a>,&nbsp;&nbsp;<a href="#">+1 987 654 3210</a></span>
-                                <span><a href="mailto:support@agrocompany.com">support@agrocompany.com</a></span>
-
-                                <div class="social-btns">
-                                    <a class="fontello-twitter" href="#"></a>
-                                    <a class="fontello-facebook" href="#"></a>
-                                    <a class="fontello-linkedin-squared" href="#"></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,56 +339,51 @@
 									{
 										"breakpoint": 575,
 										"settings":{
-											"rows": 2,
-											"slidesToShow": 2,
-											"slidesToScroll": 2
+											"rows": 1,
+											"slidesToShow": 4,
+											"slidesToScroll": 4
 										}
 									},
 									{
 										"breakpoint": 767,
 										"settings":{
-											"rows": 2,
-											"slidesToShow": 3,
-											"slidesToScroll": 3
+											"rows": 1,
+											"slidesToShow": 4,
+											"slidesToScroll": 4
 										}
 									},
 									{
 										"breakpoint": 991,
 										"settings":{
-											"rows": 2,
+											"rows": 1,
 											"slidesToShow": 4,
-											"slidesToScroll": 2
+											"slidesToScroll": 4
 										}
 									},
 									{
 										"breakpoint": 1199,
 										"settings":{
-											"rows": 2,
+											"rows": 1,
 											"slidesToShow": 4,
-											"slidesToScroll": 2
+											"slidesToScroll": 4
 										}
 									}]
 								}'>
                         <!-- start item -->
                         <div class="__item">
                             <figure class="__image">
-                                <img width="188" src="https://demo.artureanec.com/html/agro/img/goods_img/1.jpg"
+                                <img width="188" src="{% static 'img/1.jpg' %}"
                                      alt="demo"/>
                             </figure>
-
                             <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 1</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
+                                <h4 class="h6 __title"><a href="#">Loche</a></h4>
+                                <div class="__category"><a href="#">1 Kg</a></div>
                                 <div class="product-price">
                                     <span class="product-price__item product-price__item--new">3,80 $</span>
                                 </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
+                                <a class="custom-btn custom-btn--medium custom-btn--style-1 buy__button" href="#"><i
                                         class="fontello-shopping-bag"></i>Comprar</a>
                             </div>
-
                             <span class="product-label product-label--sale">Sale</span>
                         </div>
                         <!-- end item -->
@@ -421,72 +391,18 @@
                         <!-- start item -->
                         <div class="__item">
                             <figure class="__image">
-                                <img width="180" src="https://demo.artureanec.com/html/agro/img/goods_img/2.jpg"
+                                <img width="188" src="{% static 'img/2.jpg' %}"
                                      alt="demo"/>
                             </figure>
-
                             <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche2</a></h4>
-
-                                <div class="__category"><a href="#">Vegetables</a></div>
-
+                                <h4 class="h6 __title"><a href="#">Loche</a></h4>
+                                <div class="__category"><a href="#">2 Kg</a></div>
                                 <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">3,35 $</span>
+                                    <span class="product-price__item product-price__item--new">3,80 $</span>
                                 </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
+                                <a class="custom-btn custom-btn--medium custom-btn--style-1 buy__button" href="#"><i
                                         class="fontello-shopping-bag"></i>Comprar</a>
                             </div>
-
-                            <span class="product-label product-label--new">New</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="160" src="https://demo.artureanec.com/html/agro/img/goods_img/3.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 3</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">0,99 $</span>
-                                    <span class="product-price__item product-price__item--old">2200$</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--hot">hot</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
                             <span class="product-label product-label--sale">Sale</span>
                         </div>
                         <!-- end item -->
@@ -494,23 +410,18 @@
                         <!-- start item -->
                         <div class="__item">
                             <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
+                                <img width="188" src="{% static 'img/3.jpg' %}"
                                      alt="demo"/>
                             </figure>
-
                             <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
+                                <h4 class="h6 __title"><a href="#">Loche</a></h4>
+                                <div class="__category"><a href="#">3 Kg</a></div>
                                 <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
+                                    <span class="product-price__item product-price__item--new">3,80 $</span>
                                 </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
+                                <a class="custom-btn custom-btn--medium custom-btn--style-1 buy__button" href="#"><i
                                         class="fontello-shopping-bag"></i>Comprar</a>
                             </div>
-
                             <span class="product-label product-label--sale">Sale</span>
                         </div>
                         <!-- end item -->
@@ -518,170 +429,23 @@
                         <!-- start item -->
                         <div class="__item">
                             <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
+                                <img width="188" src="{% static 'img/4.jpg' %}"
                                      alt="demo"/>
                             </figure>
-
                             <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
+                                <h4 class="h6 __title"><a href="#">Loche</a></h4>
+                                <div class="__category"><a href="#">4 Kg</a></div>
                                 <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
+                                    <span class="product-price__item product-price__item--new">3,80 $</span>
                                 </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
+                                <a class="custom-btn custom-btn--medium custom-btn--style-1 buy__button" href="#"><i
+                                        class="fontello-shopping-bag "></i>Comprar</a>
                             </div>
-
                             <span class="product-label product-label--sale">Sale</span>
                         </div>
                         <!-- end item -->
 
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
 
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="__item">
-                            <figure class="__image">
-                                <img width="190" src="https://demo.artureanec.com/html/agro/img/goods_img/4.jpg"
-                                     alt="demo"/>
-                            </figure>
-
-                            <div class="__content">
-                                <h4 class="h6 __title"><a href="single_product.html">Loche 4</a></h4>
-
-                                <div class="__category"><a href="#">Fruits</a></div>
-
-                                <div class="product-price">
-                                    <span class="product-price__item product-price__item--new">2,10 $</span>
-                                </div>
-
-                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                        class="fontello-shopping-bag"></i>Comprar</a>
-                            </div>
-
-                            <span class="product-label product-label--sale">Sale</span>
-                        </div>
-                        <!-- end item -->
                     </div>
                 </div>
                 <!-- end goods -->
@@ -738,8 +502,8 @@
         <section class="section section--review  lazy" data-src="img/review_bg_1.png">
             <div class="container">
                 <div class="section-heading section-heading--center" data-aos="fade">
-                    <h2 class="__title">Nuestros clientes <span>opinan</span></h2>
-                    <p>Les han encantado nuestros productos.</p>
+                    <h2 class="__title">Quienes <span>somos</span></h2>
+                    <p>Conócenos.</p>
                 </div>
 
                 <!-- start review -->
@@ -749,61 +513,12 @@
                         <div class="review__item">
                             <div class="review__item__text">
                                 <p>
-                                    <i>Latin words, combined with a handful of model sentence structures, to generate
-                                        Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
-                                        always free from repetition injected humour, or non-characteristic words etc.
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                        in a piece of classical Latin literature from 45 BC, making it over</i>
+                                    <i>Nuestra visión es satisfacer las necesidades de nuestros consumidores y mejorar
+                                        el nivel de vida de nuestros clientes ofreciéndoles productos de calidad,
+                                        mediante la venta de loches de la mejor calidad y precio.</i>
                                 </p>
                             </div>
 
-                            <div class="review__item__author  d-table">
-                                <div class="d-table-cell align-middle">
-                                    <div class="review__item__author-image">
-                                        <img class="circled" src="img/ava.png" alt="ava"/>
-                                    </div>
-                                </div>
-
-                                <div class="d-table-cell align-middle">
-                                    <span class="review__item__author-name"><strong>Terens Smith</strong></span>
-                                    <span class="review__item__author-position">/CEO AntalAgro</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end item -->
-
-                        <!-- start item -->
-                        <div class="review__item">
-                            <div class="review__item__text">
-                                <p>
-                                    <i>Latin words, combined with a handful of model sentence structures, to generate
-                                        Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
-                                        always free from repetition injected humour, or non-characteristic words etc.
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                        in a piece of classical Latin literature from 45 BC, making it over</i>
-                                </p>
-
-                                <p>
-                                    <i>Latin words, combined with a handful of model sentence structures, to generate
-                                        Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
-                                        always free from repetition injected humour, or non-characteristic words etc.
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                        in a piece of classical Latin literature from 45 BC, making it over</i>
-                                </p>
-                            </div>
-
-                            <div class="review__item__author  d-table">
-                                <div class="d-table-cell align-middle">
-                                    <div class="review__item__author-image">
-                                        <img class="circled" src="img/ava.png" alt="ava"/>
-                                    </div>
-                                </div>
-
-                                <div class="d-table-cell align-middle">
-                                    <span class="review__item__author-name"><strong>Terens Smith</strong></span>
-                                    <span class="review__item__author-position">/CEO AntalAgro</span>
-                                </div>
-                            </div>
                         </div>
                         <!-- end item -->
                     </div>
@@ -986,32 +701,6 @@
                         </nav>
                     </div>
                 </div>
-
-                <div class="col-12 col-md col-lg-4">
-                    <div class="footer__item">
-                        <h5 class="footer__item__title h6">Contacts</h5>
-
-                        <address>
-                            <p>
-                                523 Sylvan Ave, 5th Floor Mountain View, CA 940 USA
-                            </p>
-
-                            <p>
-                                +1 (234) 56789, +1 987 654 3210
-                            </p>
-
-                            <p>
-                                <a href="mailto:support@agrocompany.com">support@agrocompany.com</a>
-                            </p>
-                        </address>
-
-                        <div class="social-btns">
-                            <a href="#"><i class="fontello-twitter"></i></a>
-                            <a href="#"><i class="fontello-facebook"></i></a>
-                            <a href="#"><i class="fontello-linkedin-squared"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="row align-items-lg-end justify-content-lg-between copyright">
@@ -1055,5 +744,27 @@
 <script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
 
 <script type="text/javascript" src="https://demo.artureanec.com/html/agro/js/main.min.js"></script>
+<script>
+    $(document).on('click', '#get_in_touch', function () {
+        Swal.fire({
+            title: 'Mensajéanos',
+            html: `<ul>
+                      <li>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=+51969178134&text=Hola,%20quiero%20pedir%20info%20sobre%20Loche%20de%20Oro"><img src="{% static 'img/whatsapp.png' %}" />+51969178134</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=+51971653191&text=Hola,%20quiero%20pedir%20info%20sobre%20Loche%20de%20Oro"><img src="{% static 'img/whatsapp.png' %}" />+51971653191</a>
+                      </li>
+                    </ul>`,
+            icon: 'info',
+            confirmButtonText: 'Cool'
+        })
+    });
+    $(document).on('click', '.buy__button', function () {
+        let el = $(this);
+        let quantity =  el.parent().find('.__category a').text();
+        window.open(`https://api.whatsapp.com/send?phone=+51971653191&text=Hola,%20quiero%20pedir%20${quantity}%20de%20Loche%20de%20Oro`);
+    })
+</script>
 </body>
 </html>

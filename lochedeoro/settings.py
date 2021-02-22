@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'lochedeoro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME', default='mark2'),
-        'USER': config('DATABASE_USER', default='mark2'),
-        'PASSWORD': config('DATABASE_PASSWORD', default='mark2'),
-        'HOST': config('DATABASE_HOST', default='localhost'),
-        'PORT': config('DATABASE_PORT', default=''),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
